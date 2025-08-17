@@ -1,14 +1,17 @@
-import './App.css'
-import Banner from './components/Banner/Banner'
-import Navbar from './components/Navbar/Navbar'
+import React from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './Home.jsx'
 
-function App() {
- 
+const App = () => {
   return (
-    <>
-    <Navbar />
-    <Banner />
-    </>
+    <div>
+     <nav className="navbar-3d mb-4">
+  <Link to="/" className="btn-3d">Home</Link>
+</nav>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </div>
   )
 }
 

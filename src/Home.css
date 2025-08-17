@@ -1,0 +1,172 @@
+.app-3d-bg {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  perspective: 1200px;
+  animation: fadeInBg 1.2s ease;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #7c3aed;
+  margin-bottom: 2rem;
+  text-shadow: 2px 4px 12px #e0e7ff;
+  letter-spacing: 2px;
+  animation: textPop 1s cubic-bezier(.25,.8,.25,1);
+}
+
+@keyframes textPop {
+  0% { transform: scale(0.8) rotateX(30deg); opacity: 0; }
+  60% { transform: scale(1.1) rotateX(-10deg); opacity: 1; }
+  100% { transform: scale(1) rotateX(0deg); }
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  color: #a78bfa;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: loadingAnim 1.2s infinite alternate;
+}
+
+@keyframes loadingAnim {
+  0% { opacity: 0.5; transform: scale(1) rotateY(-8deg);}
+  100% { opacity: 1; transform: scale(1.1) rotateY(8deg);}
+}
+
+.result-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5b21b6;
+  animation: resultAnim 0.7s;
+}
+
+@keyframes resultAnim {
+  0% { opacity: 0; transform: translateY(-10px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-3d {
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.10);
+  border: 2px solid #a78bfa;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.1rem;
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  background: #fff;
+}
+
+.input-3d:focus {
+  border-color: #f472b6;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.18);
+}
+
+.btn-3d {
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.18);
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.btn-3d:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.28);
+}
+
+.pokemon-list {
+  width: 100%;
+  max-width: 700px;
+  padding-left: 0;
+}
+
+.pokemon-card {
+  background: linear-gradient(120deg, #fff 60%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(80, 0, 120, 0.15), 0 1.5px 6px rgba(80, 0, 120, 0.10);
+  transform: rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: cardAppear 0.7s;
+}
+
+.pokemon-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 0 16px 40px rgba(80, 0, 120, 0.22), 0 2px 8px rgba(80, 0, 120, 0.15);
+}
+
+@keyframes cardAppear {
+  0% { opacity: 0; transform: scale(0.9) rotateY(-30deg);}
+  100% { opacity: 1; transform: scale(1) rotateY(-8deg);}
+}
+
+.pokemon-img {
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(80, 0, 120, 0.18);
+  border: 4px solid #c4b5fd;
+  width: 5rem;
+  height: 5rem;
+  background: #f3e8ff;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+
+.pokemon-info p {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  color: #5b21b6;
+}
+
+.pokemon-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 2px 6px #e0e7ff;
+}
+.navbar-3d {
+  width: 100%;
+  background: linear-gradient(90deg, #c4b5fd 0%, #f3e8ff 100%);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.10);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  animation: navbarDrop 0.8s;
+}
+
+@keyframes navbarDrop {
+  0% { transform: translateY(-40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
